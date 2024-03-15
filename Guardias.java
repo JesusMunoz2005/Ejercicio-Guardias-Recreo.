@@ -1,19 +1,36 @@
 package guardias.recreo;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Guardias {
-
 	private int fecha;
 	private String idProfesor;
 	private String DescripcionZona;
 	private int numZona;
 	
-	public Guardias(Profesor profesor, Zona zona, int fecha) {
+	
+	
+	
+	public Guardias(int fecha, String rutaArch) {
+		try {
+            BufferedReader bfr = new BufferedReader(new FileReader(rutaArch));
+            String valores;
+            while ((valores = bfr.readLine()) != null) {       
+                   List<String> valoresArray = new ArrayList<>();
+                    valoresArray.addAll(Arrays.asList(valores.trim().split(",")));// ESTA MAL
+            }
+            bfr.close(); // Es buena práctica cerrar el BufferedReader
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
 		this.fecha=fecha;
-		this.idProfesor=profesor.getId();
-		this.DescripcionZona=zona.getDescripcionZona();
-		this.numZona=zona.getNumZona();
 	}
 	
 	
