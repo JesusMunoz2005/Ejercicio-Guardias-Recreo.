@@ -55,8 +55,26 @@ public class Guardias {
 	public int getNumZona() {
 		return numZona;
 	}
+
+
+	public void setFecha(int fecha) {
+		this.fecha = fecha;
+	}
+
+
+	public void setIdProfesor(String idProfesor) {
+		this.idProfesor = idProfesor;
+	}
+
+
+	public void setDescripcionZona(String descripcionZona) {
+		DescripcionZona = descripcionZona;
+	}
+
+
+	public void setNumZona(int numZona) {
+		this.numZona = numZona;
+	}
 	
 	
 }
-
-
